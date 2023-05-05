@@ -1,16 +1,31 @@
-# codex_woltiensis_demo
+# Codex Woltiensis Songbook App
 
-A new Flutter project.
+This Flutter application is a digital songbook for the "Codex Woltiensis 🐇", a small collection of songs that we've compiled for easy reference and use. With this app, you'll be able to view and search for songs, as well as save your favorites for easy access.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To get started with this app, you'll need to have Flutter installed on your machine. You can find detailed instructions for installing Flutter [here](https://flutter.dev/docs/get-started/install).
 
-A few resources to get you started if this is your first Flutter project:
+Once you have Flutter installed, you can clone this repository to your local machine using the following command:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
+$ https://github.com/valexand-ulb/codex-woltiensis.git
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+From there, you can open the project in your favorite IDE or text editor, and run it using the Flutter CLI or by clicking the "run" button in your IDE.
+
+## Features
+
+The Codex Woltiensis Songbook App will probably one day includes the following features (non exhaustive):
+- [ ] View a list of songs in the collection
+- [ ] Save your favorite songs for easy access
+- [ ] Search for songs by title, artist, or lyrics
+- [ ] View the lyrics and chords for each song
+- [ ]  Dark mode support
+- [ ]  Songs editor
+
+## Acknowledgements
+⚠️ This project is made by a student trying to learn the flutter framework. The code will be subject to a lot of changes for learning purposes.
+
+We'd like to thank the contributors to this project, as well as the creators of the Flutter framework and the Codex Woltiensis songbook. Without their hard work, this project wouldn't be possible.
