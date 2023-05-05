@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'cardspage.dart';
+import 'mainappbar.dart';
 
 class MyHomePage extends StatefulWidget{
   const MyHomePage({super.key});
@@ -24,6 +25,9 @@ class _MyHomePageState extends State<MyHomePage> {
       case 1:
         page = const Placeholder();
         break;
+      case 2:
+        page = const Placeholder();
+        break;
       default:
         throw UnimplementedError('no widget for $selectedIndex');
     }
@@ -43,6 +47,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     NavigationRailDestination(
                       icon: Icon(Icons.favorite),
+                      label: Text('Favorites'),
+                    ),
+                    NavigationRailDestination(
+                      icon: Icon(Icons.book),
                       label: Text('Favorites'),
                     ),
                   ],

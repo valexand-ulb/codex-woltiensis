@@ -23,12 +23,11 @@ class SongCard extends Card{
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(_songname),
-                const SizedBox(height: 8.0),
+                //const SizedBox(height: 8.0),
                 Text(_writter),
               ],
             ),
           ),
-          const SizedBox(height: 40.0),
           Align(
             alignment: Alignment.bottomRight,
             child: IconButton(
