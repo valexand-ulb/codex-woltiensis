@@ -18,7 +18,7 @@ class SongCard extends Card{
             child: Placeholder(), // TODO : images
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
+            padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 0.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -28,11 +28,10 @@ class SongCard extends Card{
               ],
             ),
           ),
-          const SizedBox(height: 10.0),
+          const SizedBox(height: 40.0),
           Align(
             alignment: Alignment.bottomRight,
             child: IconButton(
-              alignment: Alignment.bottomRight,
               onPressed: (){
                 print('Liked $_songname');
               },

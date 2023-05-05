@@ -1,47 +1,61 @@
 import 'package:flutter/material.dart';
 
-import 'cardsgrid.dart';
+import 'cardspage.dart';
 
-class MyHomePage extends StatelessWidget{
+class MyHomePage extends StatefulWidget{
   const MyHomePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title : const Text('Codex Woltiensis'),
-        leading : IconButton(
-          icon : const Icon(
-            Icons.menu,
-            semanticLabel: 'menu',
-          ),
-          onPressed:(){
-            print('Menu button');
-          },
-        ),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(
-              Icons.search,
-              semanticLabel: 'Search',
-            ),
-            onPressed: (){
-              print('Search button');
-            },
-          ),
-          IconButton(
-            icon: const Icon(
-              Icons.tune,
-              semanticLabel: 'Filter',
-            ),
-            onPressed: (){
-              print('Filter button');
-            },
-          ),
-        ],
+  State<MyHomePage> createState() => _MyHomePageState();
+}
 
+class _MyHomePageState extends State<MyHomePage> {
+
+  var selectedIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    Widget page;
+    switch (selectedIndex) {
+      case 0:
+        page = const CardsPage(20);
+        break;
+      case 1:
+        page = const Placeholder();
+        break;
+      default:
+        throw UnimplementedError('no widget for $selectedIndex');
+    }
+    return Scaffold(
+      body: Row(
+        children: [
+          SafeArea(
+            child: NavigationRail(
+              extended: false,
+              destinations: const [
+                NavigationRailDestination(
+                  icon: Icon(Icons.home),
+                  label: Text('Home'),
+                ),
+                NavigationRailDestination(
+                  icon: Icon(Icons.favorite),
+                  label: Text('Favorites'),
+                ),
+              ],
+              selectedIndex: selectedIndex,
+              onDestinationSelected: (value) {
+                setState(() {
+                  selectedIndex = value;
+                });
+              },
+            ),
+          ),
+          Expanded(
+              child: Container(
+                  child: page,
+              )),
+        ],
       ),
-      body: const CardsGrid(100),
     );
   }
 }
