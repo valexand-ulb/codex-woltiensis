@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'songcard.dart';
+import '../model/song_card.dart';
 
 class CardsPage extends StatelessWidget{
   final int _numOfCards;
@@ -28,5 +28,4 @@ class CardsPage extends StatelessWidget{
       ),
     );
   }
-
 }

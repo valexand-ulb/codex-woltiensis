@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'cardspage.dart';
-import 'mainappbar.dart';
+import 'cards_page.dart';
 
 class MyHomePage extends StatefulWidget{
   const MyHomePage({super.key});
@@ -51,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     NavigationRailDestination(
                       icon: Icon(Icons.book),
-                      label: Text('Favorites'),
+                      label: Text('Read'),
                     ),
                   ],
                   selectedIndex: selectedIndex,
