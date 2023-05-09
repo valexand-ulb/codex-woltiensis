@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:sqflite/sqflite.dart';
 
-import '../model/song.dart';
+import '../song.dart';
 
 class SongsDatabase {
   static final SongsDatabase instance = SongsDatabase.init();

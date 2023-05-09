@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../model/song_card.dart';
+import 'song_card.dart';
 
 class CardsPage extends StatelessWidget{
   final int _numOfCards;
