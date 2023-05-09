@@ -7,11 +7,11 @@ class CardsPage extends StatelessWidget{
 
   const CardsPage(this._numOfCards, {super.key,});
 
-  List<Card> _buildGridCards(int count) {
-    List<Card> cards = List.generate(
+  List<Widget> _buildGridCards(int count) {
+    List<Widget> cards = List.generate(
       count,
           (int index) {
-        return const SongCard('Title', 'Writter');
+        return SongCard('Title', 'Writter');
       },
     );
     return cards;
