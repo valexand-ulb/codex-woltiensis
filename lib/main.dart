@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'View/menu_page.dart';
+import 'view/menu_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       title: 'Codex Woltiensis Demo',
       home: MyHomePage(),
-
     );
   }
 }

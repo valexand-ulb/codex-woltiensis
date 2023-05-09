@@ -4,39 +4,26 @@ class SongCard extends StatefulWidget {
   final String _songname;
   final String _writter;
 
-  bool _liked = false;
-  static IconData likedIcon = Icons.favorite_border;
-
-
-  SongCard(this._songname, this._writter, {super.key});
+  const SongCard(this._songname, this._writter, {super.key});
 
   @override
   State<SongCard> createState() => _SongCardState();
 }
 
 class _SongCardState extends State<SongCard> {
-
-  IconData get likedIcon => SongCard.likedIcon;
-  set likedIcon(IconData value) {
-    setState(() {
-      SongCard.likedIcon = value;
-    });
-  }
-
-  bool get liked => widget._liked;
-  set liked(bool value) {
-    setState(() {
-      widget._liked = value;
-    });
-  }
+  bool _liked = false;
+  IconData _likedIcon = Icons.favorite_border;
 
   @override
   Widget build(BuildContext context) {
     return Card(
       clipBehavior: Clip.antiAlias,
-      child:InkWell(
-        onDoubleTap: (){
+      child: InkWell(
+        onDoubleTap: () {
           setState(likeCard);
+        },
+        onLongPress: () {
+          print('added to read');
         },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,25 +38,21 @@ class _SongCardState extends State<SongCard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(widget._songname),
-                  //const SizedBox(height: 8.0),
                   Text(widget._writter),
                 ],
               ),
             ),
             Align(
-              alignment: Alignment.bottomRight,
-              child: IconButton(
-                onPressed: (){
-                  likeCard();
-                },
-                icon: Icon(
-                  likedIcon,
-                  color: Colors.pink,
-                  size: 24.0,
-                  semanticLabel: 'Text to announce in accessibility modes',
-                ),
-              ),
-            )
+                alignment: Alignment.bottomRight,
+                child: IconButton(
+                    onPressed: () {
+                      setState(likeCard);
+                    },
+                    icon: Icon(
+                      _likedIcon,
+                      color: Colors.pink,
+                      size: 24.0,
+                    )))
           ],
         ),
       ),
@@ -77,14 +60,13 @@ class _SongCardState extends State<SongCard> {
   }
 
   void likeCard() {
-    if (!liked) {
+    if (!_liked) {
       print('Liked ${widget._songname}');
-      likedIcon = Icons.favorite;
-      liked = true;
+      _likedIcon = Icons.favorite;
     } else {
       print('Unliked ${widget._songname}');
-      likedIcon = Icons.favorite_border;
-      liked = false;
+      _likedIcon = Icons.favorite_border;
     }
+    _liked = !_liked;
   }
 }
