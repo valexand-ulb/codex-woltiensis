@@ -33,7 +33,7 @@ class _SongCardState extends State<SongCard> {
               child: Placeholder(), // TODO : images
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 0.0),
+              padding: const EdgeInsets.fromLTRB(6.0, 2.0, 16.0, 0.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -42,17 +42,18 @@ class _SongCardState extends State<SongCard> {
                 ],
               ),
             ),
-            Align(
-                alignment: Alignment.bottomRight,
-                child: IconButton(
-                    onPressed: () {
-                      setState(likeCard);
-                    },
-                    icon: Icon(
-                      _likedIcon,
-                      color: Colors.pink,
-                      size: 24.0,
-                    )))
+            Expanded(
+              child: IconButton(
+                  onPressed: () {
+                    setState(likeCard);
+                  },
+                  icon: Icon(
+                    _likedIcon,
+                    color: Colors.pink,
+                    size: 24.0,
+                  )
+              ),
+            )
           ],
         ),
       ),
