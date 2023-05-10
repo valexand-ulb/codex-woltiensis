@@ -12,12 +12,12 @@ class SongField{
 }
 
 class Song{
-  final int? id;
+  final int id;
   final String title;
   final String writer;
   final String? lyrics;
 
-  const Song({this.id,
+  const Song({required this.id,
     required this.title,
     required this.writer,
     this.lyrics
@@ -44,7 +44,7 @@ class Song{
   };
 
   static Song fromJson(Map<String, Object?> json) => Song(
-    id: json[SongField.id] as int?,
+    id: json[SongField.id] as int,
     title: json[SongField.title] as String,
     writer: json[SongField.writer] as String,
     lyrics: json[SongField.lyrics] as String?,
