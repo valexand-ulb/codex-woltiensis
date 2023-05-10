@@ -9,7 +9,7 @@ import '../song.dart';
 class CodexDatabase {
   static const String tableSongs = 'songs';
 
-  static final CodexDatabase _db = new CodexDatabase.internal();
+  static final CodexDatabase _db = CodexDatabase.internal();
 
   CodexDatabase.internal();
 

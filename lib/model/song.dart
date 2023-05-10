@@ -12,15 +12,16 @@ class SongField{
 }
 
 class Song{
-  final int id;
+  final int? id;
   final String title;
   final String writer;
-  final String? lyrics;
+  final String lyrics;
 
-  const Song({required this.id,
+  const Song({
+    this.id,
     required this.title,
     required this.writer,
-    this.lyrics
+    required this.lyrics,
   });
 
   // Copy constructor -> creation of a new object needed ?
@@ -47,7 +48,7 @@ class Song{
     id: json[SongField.id] as int,
     title: json[SongField.title] as String,
     writer: json[SongField.writer] as String,
-    lyrics: json[SongField.lyrics] as String?,
+    lyrics: json[SongField.lyrics] as String,
   );
 }
 

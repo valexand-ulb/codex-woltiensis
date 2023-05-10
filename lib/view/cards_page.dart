@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
 
+import '../model/song.dart';
 import 'song_card.dart';
 
 class CardsPage extends StatelessWidget {
-  final int _numOfCards;
+  final List<Song> songs = [
+    const Song(title: 'Test1', writer: 'W1', lyrics: 'L1'),
+    const Song(title: 'Test2', writer: 'W2', lyrics: 'L2'),
+    const Song(title: 'Test3', writer: 'W3', lyrics: 'L3')];
 
-  const CardsPage(
-    this._numOfCards, {
-    super.key,
-  });
+
+  CardsPage({super.key,});
 
   List<Widget> _buildGridCards(int count) {
     List<Widget> cards = List.generate(
       count,
-      (int index) {
-        return const SongCard('Title', 'Writter');
+          (int index) {
+        return SongCard(songs[index].title, songs[index].writer);
       },
     );
     return cards;
@@ -27,7 +29,7 @@ class CardsPage extends StatelessWidget {
         crossAxisCount: 2,
         padding: const EdgeInsets.all(16.0),
         childAspectRatio: 8.0 / 9.0,
-        children: _buildGridCards(_numOfCards),
+        children: _buildGridCards(songs.length),
       ),
     );
   }

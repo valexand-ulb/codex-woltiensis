@@ -1,3 +1,4 @@
+import 'package:codex_woltiensis_demo/model/database/database.dart';
 import 'package:flutter/material.dart';
 
 import 'cards_page.dart';
@@ -13,12 +14,14 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   var selectedIndex = 0;
 
+  _MyHomePageState();
+
   @override
   Widget build(BuildContext context) {
     Widget page;
     switch (selectedIndex) {
       case 0:
-        page = const CardsPage(20);
+        page = CardsPage();
         break;
       case 1:
         page = const LikedPage(5);

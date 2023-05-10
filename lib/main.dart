@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'model/database/database.dart';
+import 'model/song.dart';
 import 'view/menu_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await CodexDatabase.get().getAllSongs();
+  CodexDatabase database = CodexDatabase.get();
 
   runApp(const MyApp());
 }
