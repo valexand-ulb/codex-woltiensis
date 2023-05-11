@@ -3,16 +3,25 @@ import 'package:flutter/material.dart';
 class SongCard extends StatefulWidget {
   final String _songname;
   final String _writter;
+  final bool _liked;
 
-  const SongCard(this._songname, this._writter, {super.key});
+
+  const SongCard(this._songname, this._writter, this._liked, {super.key});
 
   @override
   State<SongCard> createState() => _SongCardState();
 }
 
 class _SongCardState extends State<SongCard> {
-  bool _liked = false;
-  IconData _likedIcon = Icons.favorite_border;
+  late bool liked;
+  late IconData _likedIcon;
+
+  @override
+  void initState() {
+    super.initState();
+    liked = widget._liked;
+    _likedIcon = liked ? Icons.favorite : Icons.favorite_border;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,49 +34,49 @@ class _SongCardState extends State<SongCard> {
         onLongPress: () {
           print('added to read');
         },
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            const AspectRatio(
-              aspectRatio: 18.0 / 11.0,
-              child: Placeholder(), // TODO : images
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(6.0, 2.0, 16.0, 0.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(widget._songname),
-                  Text(widget._writter),
-                ],
+        child: Stack(
+          children:<Widget>[Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              const AspectRatio(
+                aspectRatio: 18.0 / 11.0,
+                child: Placeholder(), // TODO : images
               ),
-            ),
-            Expanded(
-              child: IconButton(
-                  onPressed: () {
-                    setState(likeCard);
-                  },
-                  icon: Icon(
-                    _likedIcon,
-                    color: Colors.pink,
-                    size: 24.0,
-                  )
+              Padding(
+                padding: const EdgeInsets.fromLTRB(6.0, 2.0, 16.0, 0.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(widget._songname),
+                    Text(widget._writter),
+                  ],
+                ),
               ),
-            )
-          ],
+              Expanded(
+                child: IconButton(
+                    onPressed: () {
+                      setState(likeCard);
+                    },
+                    icon: Icon(
+                      _likedIcon,
+                      color: Colors.pink,
+                      size: 24.0,
+                    )
+                ),
+              ),
+            ],
+          ),
+        ],
         ),
       ),
     );
   }
 
   void likeCard() {
-    if (!_liked) {
-      print('Liked ${widget._songname}');
-      _likedIcon = Icons.favorite;
-    } else {
-      print('Unliked ${widget._songname}');
-      _likedIcon = Icons.favorite_border;
-    }
-    _liked = !_liked;
+    setState(() {
+      liked = !liked;
+      _likedIcon = liked ? Icons.favorite : Icons.favorite_border;
+    });
+    print('${liked ? "Liked" : "Unliked"} ${widget._songname}');
   }
 }

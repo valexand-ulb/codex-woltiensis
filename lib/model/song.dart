@@ -9,6 +9,7 @@ class SongField{
   static const String title = 'title';
   static const String writer = 'writer';
   static const String lyrics = 'lyrics';
+  static const String liked = 'liked';
 }
 
 class Song{
@@ -16,12 +17,14 @@ class Song{
   final String title;
   final String writer;
   final String lyrics;
+  final bool liked;
 
   const Song({
     this.id,
     required this.title,
     required this.writer,
     required this.lyrics,
+    required this.liked,
   });
 
   // Copy constructor -> creation of a new object needed ?
@@ -29,12 +32,14 @@ class Song{
     int? id,
     String? title,
     String? writer,
-    String? lyrics
+    String? lyrics,
+    bool? liked,
   }) => Song(
     id: id ?? this.id,
     title: title ?? this.title,
     writer: writer ?? this.writer,
     lyrics: lyrics ?? this.lyrics,
+    liked: liked ?? this.liked,
   );
 
   Map<String, Object?> toJson() => {
@@ -42,6 +47,7 @@ class Song{
     SongField.title: title,
     SongField.writer: writer,
     SongField.lyrics: lyrics,
+    SongField.liked: liked,
   };
 
   static Song fromJson(Map<String, Object?> json) => Song(
@@ -49,6 +55,7 @@ class Song{
     title: json[SongField.title] as String,
     writer: json[SongField.writer] as String,
     lyrics: json[SongField.lyrics] as String,
+    liked: json[SongField.liked] as bool,
   );
 }
 

@@ -5,9 +5,9 @@ import 'song_card.dart';
 
 class CardsPage extends StatelessWidget {
   final List<Song> songs = [
-    const Song(title: 'Test1', writer: 'W1', lyrics: 'L1'),
-    const Song(title: 'Test2', writer: 'W2', lyrics: 'L2'),
-    const Song(title: 'Test3', writer: 'W3', lyrics: 'L3')];
+    const Song(title: 'Test1', writer: 'W1', lyrics: 'L1', liked: true),
+    const Song(title: 'Test2', writer: 'W2', lyrics: 'L2', liked: false),
+    const Song(title: 'Test3', writer: 'W3', lyrics: 'L3', liked: true)];
 
 
   CardsPage({super.key,});
@@ -16,7 +16,8 @@ class CardsPage extends StatelessWidget {
     List<Widget> cards = List.generate(
       count,
           (int index) {
-        return SongCard(songs[index].title, songs[index].writer);
+        print('liked: ${songs[index].liked}');
+        return SongCard(songs[index].title, songs[index].writer, songs[index].liked);
       },
     );
     return cards;

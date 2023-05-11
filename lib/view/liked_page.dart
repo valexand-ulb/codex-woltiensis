@@ -14,7 +14,7 @@ class LikedPage extends StatelessWidget {
     List<Widget> cards = List.generate(
       count,
       (int index) {
-        return const SongCard('Title', 'Writter');
+        return SongCard('Title', 'Writter', false);
       },
     );
     return cards;
