@@ -19,4 +19,12 @@ class ListedSong {
     _listedSong!.songs = songs;
     _listedSong!.likedSongs = likedSongs;
   }
+
+  static likeSong(Song song){
+    _listedSong!.likedSongs.add(song);
+  }
+
+  static unlikeSong(Song song){
+    _listedSong!.likedSongs.remove(song);
+  }
 }

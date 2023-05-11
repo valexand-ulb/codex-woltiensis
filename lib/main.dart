@@ -8,9 +8,9 @@ import 'view/menu_page.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   CodexDatabase database = CodexDatabase.get();
-  await database.insertSong(const Song(title: 'A', writer: 'B', lyrics: 'C', liked: true));
-  await database.insertSong(const Song(title: 'D', writer: 'E', lyrics: 'F', liked: false));
-  await database.insertSong(const Song(title: 'G', writer: 'H', lyrics: 'I', liked: false));
+  await database.insertSong(Song(title: 'A', writer: 'B', lyrics: 'C', liked: false));
+  await database.insertSong(Song(title: 'D', writer: 'E', lyrics: 'F', liked: false));
+  await database.insertSong(Song(title: 'G', writer: 'H', lyrics: 'I', liked: false));
   ListedSong ls = ListedSong.instance;
   ListedSong.setLists(await database.getAllSongs(), await database.getAllLikedSongs());
 

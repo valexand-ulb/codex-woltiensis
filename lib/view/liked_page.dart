@@ -9,15 +9,11 @@ class LikedPage extends StatelessWidget {
 
   List<Widget> _buildGridCards(int count) {
     ListedSong ls = ListedSong.instance;
-    List<Song> likedSongs = ls.likedSongs;
+    List<Song> songs = ls.likedSongs;
     List<Widget> cards = List.generate(
       count,
-      (int index) {
-        return SongCard(
-            likedSongs[index].title,
-            likedSongs[index].writer,
-            likedSongs[index].liked,
-        );
+          (int index) {
+        return SongCard(songs[index]);
       },
     );
     return cards;
@@ -30,7 +26,7 @@ class LikedPage extends StatelessWidget {
         crossAxisCount: 2,
         padding: const EdgeInsets.all(16.0),
         childAspectRatio: 8.0 / 9.0,
-        children: _buildGridCards(ListedSong.instance.songs.length),
+        children: _buildGridCards(ListedSong.instance.likedSongs.length),
       ),
     );
   }

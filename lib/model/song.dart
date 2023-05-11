@@ -17,9 +17,9 @@ class Song{
   final String title;
   final String writer;
   final String lyrics;
-  final bool liked;
+  late bool liked;
 
-  const Song({
+  Song({
     this.id,
     required this.title,
     required this.writer,

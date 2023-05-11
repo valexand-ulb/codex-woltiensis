@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import '../model/listed_song.dart';
+import '../model/song.dart';
 
 class SongCard extends StatefulWidget {
-  final String _songname;
-  final String _writter;
-  final bool _liked;
+  final Song song;
 
 
-  const SongCard(this._songname, this._writter, this._liked, {super.key});
+  const SongCard(this.song, {super.key});
 
   @override
   State<SongCard> createState() => _SongCardState();
@@ -19,7 +19,7 @@ class _SongCardState extends State<SongCard> {
   @override
   void initState() {
     super.initState();
-    liked = widget._liked;
+    liked = widget.song.liked;
     _likedIcon = liked ? Icons.favorite : Icons.favorite_border;
   }
 
@@ -47,8 +47,8 @@ class _SongCardState extends State<SongCard> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(widget._songname),
-                    Text(widget._writter),
+                    Text(widget.song.title),
+                    Text(widget.song.writer),
                   ],
                 ),
               ),
@@ -75,8 +75,15 @@ class _SongCardState extends State<SongCard> {
   void likeCard() {
     setState(() {
       liked = !liked;
+
       _likedIcon = liked ? Icons.favorite : Icons.favorite_border;
+
+      liked ? ListedSong.likeSong(widget.song) :
+      ListedSong.unlikeSong(widget.song);
+
+      widget.song.liked = liked;
+
     });
-    print('${liked ? "Liked" : "Unliked"} ${widget._songname}');
+    print('${liked ? "Liked" : "Unliked"} ${widget.song.title} by ${widget.song.writer}');
   }
 }

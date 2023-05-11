@@ -14,11 +14,7 @@ class CardsPage extends StatelessWidget {
     List<Widget> cards = List.generate(
       count,
           (int index) {
-        return SongCard(
-            songs[index].title,
-            songs[index].writer,
-            songs[index].liked
-        );
+        return SongCard(songs[index]);
       },
     );
     return cards;
