@@ -21,10 +21,10 @@ class _MyHomePageState extends State<MyHomePage> {
     Widget page;
     switch (selectedIndex) {
       case 0:
-        page = CardsPage();
+        page = const CardsPage();
         break;
       case 1:
-        page = const LikedPage(5);
+        page = const LikedPage();
         break;
       case 2:
         page = const Placeholder();

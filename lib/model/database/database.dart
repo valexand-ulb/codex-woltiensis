@@ -36,25 +36,35 @@ class CodexDatabase {
   Future _createTables(Database db, int version) async {
     const String idType = 'INTEGER PRIMARY KEY AUTOINCREMENT';
     const String textType = 'TEXT NOT NULL';
+    const String Unique = 'UNIQUE';
+    const String boolType = 'BOOLEAN NOT NULL';
     await db.execute('''
     CREATE TABLE $tableSongs(
     ${SongField.id} $idType,
-    ${SongField.title} $textType,
+    ${SongField.title} $textType $Unique,
     ${SongField.writer} $textType,
-    ${SongField.lyrics} $textType
-    )
+    ${SongField.lyrics} $textType,
+    ${SongField.liked} $boolType
+    );
     ''');
   }
 
   Future<Song> insertSong(Song song) async {
     final db = await database;
-    final id = await db.insert(tableSongs, song.toJson(), conflictAlgorithm: ConflictAlgorithm.replace);
+    final id = await db.insert(tableSongs, song.toJson(), conflictAlgorithm: ConflictAlgorithm.ignore);
     return song.copy(id: id);
   }
 
   Future<List<Song>> getAllSongs() async {
     final db = await database;
     final List<Map<String, dynamic>> result = await db.query(tableSongs);
+
+    return result.map((json) => Song.fromJson(json)).toList();
+  }
+
+  Future<List<Song>> getAllLikedSongs() async {
+    final db = await database;
+    final List<Map<String, dynamic>> result = await db.query(tableSongs, where: '${SongField.liked} = TRUE');
 
     return result.map((json) => Song.fromJson(json)).toList();
   }

@@ -2,7 +2,7 @@ const String tableSongs = 'songs';
 
 class SongField{
   static final List<String> values = [
-    id, title, writer, lyrics
+    id, title, writer, lyrics, liked
   ];
 
   static const String id = '_id';
@@ -47,7 +47,7 @@ class Song{
     SongField.title: title,
     SongField.writer: writer,
     SongField.lyrics: lyrics,
-    SongField.liked: liked,
+    SongField.liked: liked ? 1 : 0,
   };
 
   static Song fromJson(Map<String, Object?> json) => Song(
@@ -55,7 +55,7 @@ class Song{
     title: json[SongField.title] as String,
     writer: json[SongField.writer] as String,
     lyrics: json[SongField.lyrics] as String,
-    liked: json[SongField.liked] as bool,
+    liked: json[SongField.liked] == 1,
   );
 }
 
