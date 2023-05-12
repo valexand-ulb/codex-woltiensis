@@ -27,16 +27,8 @@ class ListedSong {
   }
 
   static likeSong(Song song){
-    if (_listedSong!.likedSongs.isEmpty){
-      _listedSong!.likedSongs.add(song);
-    }
-    else{
-      int i=0;
-      while(_listedSong!.likedSongs[i].id! < song.id!){
-        i++;
-      }
-      _listedSong!.likedSongs.insert(i, song);
-    }
+    _listedSong!.likedSongs.add(song);
+    _listedSong!.likedSongs.sort((Song s, Song t) => s.title.compareTo(t.title));
     _updateSongDatabase(song);
 
   }
