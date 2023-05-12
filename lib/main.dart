@@ -3,11 +3,36 @@ import 'package:flutter/material.dart';
 import 'package:codex_woltiensis_demo/model/database/database.dart';
 import 'package:codex_woltiensis_demo/model/listed_song.dart';
 import 'package:codex_woltiensis_demo/view/menu_page.dart';
+import 'package:codex_woltiensis_demo/model/theme.dart';
+
+import 'model/song.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   CodexDatabase database = CodexDatabase.get();
   ListedSong ls = ListedSong.instance;
+
+  database.insertSong(Song(
+    title: 'Test1',
+    writer: 'writter 1',
+    lyrics: 'Test',
+    liked: false,)
+  );
+
+  database.insertSong(Song(
+    title: 'Test2',
+    writer: 'writter 2',
+    lyrics: 'Test',
+    liked: false,)
+  );
+
+  database.insertSong(Song(
+    title: 'Test3',
+    writer: 'writter 3',
+    lyrics: 'Test',
+    liked: false,)
+  );
+
   await ls.setLists();
 
 
@@ -18,12 +43,12 @@ Future<void> main() async {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Codex Woltiensis Demo',
-      home: MyHomePage(),
+      theme: CustomTheme.themeDataLight,
+      home: const MyHomePage(),
     );
   }
 }

@@ -28,6 +28,7 @@ class ListedSong {
 
   static likeSong(Song song){
     _listedSong!.likedSongs.add(song);
+    _listedSong!.likedSongs.sort((Song s, Song t) => s.title.compareTo(t.title));
     _updateSongDatabase(song);
 
   }
