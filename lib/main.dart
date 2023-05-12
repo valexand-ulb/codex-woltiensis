@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'model/database/database.dart';
-import 'model/song.dart';
-import 'model/listed_song.dart';
-import 'view/menu_page.dart';
+import 'package:codex_woltiensis_demo/model/database/database.dart';
+import 'package:codex_woltiensis_demo/model/listed_song.dart';
+import 'package:codex_woltiensis_demo/view/menu_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

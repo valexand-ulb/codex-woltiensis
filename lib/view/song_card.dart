@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../model/listed_song.dart';
-import '../model/song.dart';
+
+import 'package:codex_woltiensis_demo/model/listed_song.dart';
+import 'package:codex_woltiensis_demo/model/song.dart';
 
 class SongCard extends StatefulWidget {
   final Song song;

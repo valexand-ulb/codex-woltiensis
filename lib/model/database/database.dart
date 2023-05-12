@@ -1,10 +1,9 @@
 import 'dart:async';
 
-import 'package:flutter/widgets.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
-import '../song.dart';
+import 'package:codex_woltiensis_demo/model/song.dart';
 
 class CodexDatabase {
   static const String tableSongs = 'songs';

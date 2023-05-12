@@ -1,5 +1,5 @@
-import 'database/database.dart';
-import 'song.dart';
+import 'package:codex_woltiensis_demo/model/database/database.dart';
+import 'package:codex_woltiensis_demo/model/song.dart';
 
 class ListedSong {
 

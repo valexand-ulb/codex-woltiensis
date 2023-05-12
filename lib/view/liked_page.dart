@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../model/song.dart';
-import '../model/listed_song.dart';
-import 'song_card.dart';
+import 'package:codex_woltiensis_demo/model/song.dart';
+import 'package:codex_woltiensis_demo/model/listed_song.dart';
+import 'package:codex_woltiensis_demo/view/song_card.dart';
 
 class LikedPage extends StatelessWidget {
   const LikedPage({super.key});
