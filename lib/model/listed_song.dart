@@ -27,7 +27,16 @@ class ListedSong {
   }
 
   static likeSong(Song song){
-    _listedSong!.likedSongs.add(song);
+    if (_listedSong!.likedSongs.isEmpty){
+      _listedSong!.likedSongs.add(song);
+    }
+    else{
+      int i=0;
+      while(_listedSong!.likedSongs[i].id! < song.id!){
+        i++;
+      }
+      _listedSong!.likedSongs.insert(i, song);
+    }
     _updateSongDatabase(song);
 
   }

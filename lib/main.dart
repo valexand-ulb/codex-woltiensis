@@ -12,24 +12,21 @@ Future<void> main() async {
   CodexDatabase database = CodexDatabase.get();
   ListedSong ls = ListedSong.instance;
 
-  database.updateSong(Song(
-    id: 1,
+  database.insertSong(Song(
     title: 'Test1',
     writer: 'writter 1',
     lyrics: 'Test',
     liked: false,)
   );
 
-  database.updateSong(Song(
-    id: 2,
+  database.insertSong(Song(
     title: 'Test2',
     writer: 'writter 2',
     lyrics: 'Test',
     liked: false,)
   );
 
-  database.updateSong(Song(
-    id: 3,
+  database.insertSong(Song(
     title: 'Test3',
     writer: 'writter 3',
     lyrics: 'Test',
