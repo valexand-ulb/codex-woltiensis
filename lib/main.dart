@@ -34,10 +34,7 @@ Future<void> main() async {
   );
 
   await ls.setLists();
-
-
   runApp(const MyApp());
-
 }
 
 class MyApp extends StatelessWidget {
