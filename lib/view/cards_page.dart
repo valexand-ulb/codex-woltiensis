@@ -23,11 +23,23 @@ class CardsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GridView.count(
-        crossAxisCount: 2,
-        padding: const EdgeInsets.all(6.0),
-        childAspectRatio: 8.0 / 10.0,
-        children: _buildGridCards(ListedSong.instance.songs.length),
+      body: Column(
+        children: [
+          const TextField(
+            decoration: InputDecoration(
+              prefixIcon: Icon(Icons.search),
+              labelText: '',
+            ),
+          ),
+          Expanded(
+            child: GridView.count(
+              crossAxisCount: 2,
+              padding: const EdgeInsets.all(6.0),
+              childAspectRatio: 8.0 / 10.0,
+              children: _buildGridCards(ListedSong.instance.songs.length),
+            ),
+          ),
+        ],
       ),
     );
   }

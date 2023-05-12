@@ -10,9 +10,6 @@ class CustomTheme {
 
     const Color _textColor = Colors.black87;//Color.fromRGBO(0, 0, 0, 1);
 
-    const Color _redWoltje = Color.fromRGBO(161, 0, 9, 1);
-    const Color _redWoltjeLight = Color.fromRGBO(237, 38, 50, 1);
-
     return ThemeData(
 
       primaryColor: _primaryColor,
@@ -58,7 +55,7 @@ class CustomTheme {
             width: 1.75,
           ),
         ),
-        color: Colors.white,
+        color: _primaryColor,
         shadowColor: Colors.grey.withOpacity(0.3),
       ),
       navigationRailTheme: NavigationRailThemeData(
