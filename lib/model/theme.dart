@@ -2,54 +2,54 @@ import 'package:flutter/material.dart';
 
 class CustomTheme {
   static ThemeData get themeDataLight {
-    const Color _primaryColor =
+    const Color primaryColor =
         Color.fromRGBO(242, 242, 242, 1); // 60% of the ui
-    const Color _backgroundColor =
+    const Color backgroundColor =
         Color.fromRGBO(194, 222, 201, 1); // 60% of the ui
-    const Color _secondaryColor =
+    const Color secondaryColor =
         Color.fromRGBO(3, 140, 37, 1); // 30% of the ui
-    const Color _secondaryColorLight =
+    const Color secondaryColorLight =
         Color.fromRGBO(145, 253, 145, 1); // 30% of the ui
-    const Color _accentColor =
+    const Color accentColor =
         Color.fromRGBO(255, 128, 128, 1); // 10% of the ui
 
-    const Color _textColor = Colors.black87; //Color.fromRGBO(0, 0, 0, 1);
+    const Color textColor = Colors.black87; //Color.fromRGBO(0, 0, 0, 1);
 
     return ThemeData(
-      primaryColor: _primaryColor,
-      scaffoldBackgroundColor: _backgroundColor,
+      primaryColor: primaryColor,
+      scaffoldBackgroundColor: backgroundColor,
       textTheme: const TextTheme(
-        displayLarge: TextStyle(color: _textColor),
-        displayMedium: TextStyle(color: _textColor),
-        displaySmall: TextStyle(color: _textColor),
-        headlineMedium: TextStyle(color: _textColor),
-        headlineSmall: TextStyle(color: _textColor),
-        titleLarge: TextStyle(color: _textColor),
-        titleMedium: TextStyle(color: _textColor),
-        titleSmall: TextStyle(color: _textColor),
-        bodyLarge: TextStyle(color: _textColor),
-        bodyMedium: TextStyle(color: _textColor),
-        bodySmall: TextStyle(color: _textColor),
-        labelLarge: TextStyle(color: _textColor),
+        displayLarge: TextStyle(color: textColor),
+        displayMedium: TextStyle(color: textColor),
+        displaySmall: TextStyle(color: textColor),
+        headlineMedium: TextStyle(color: textColor),
+        headlineSmall: TextStyle(color: textColor),
+        titleLarge: TextStyle(color: textColor),
+        titleMedium: TextStyle(color: textColor),
+        titleSmall: TextStyle(color: textColor),
+        bodyLarge: TextStyle(color: textColor),
+        bodyMedium: TextStyle(color: textColor),
+        bodySmall: TextStyle(color: textColor),
+        labelLarge: TextStyle(color: textColor),
       ),
-      dividerColor: _textColor.withOpacity(0.5),
+      dividerColor: textColor.withOpacity(0.5),
       buttonTheme: const ButtonThemeData(
-        buttonColor: _accentColor,
+        buttonColor: accentColor,
         textTheme: ButtonTextTheme.primary,
       ),
       colorScheme: const ColorScheme(
-        primary: _primaryColor,
-        secondary: _secondaryColor,
+        primary: primaryColor,
+        secondary: secondaryColor,
         surface: Colors.white,
         background: Colors.white,
         error: Colors.red,
         onPrimary: Colors.white,
         onSecondary: Colors.white,
-        onSurface: _textColor,
-        onBackground: _textColor,
+        onSurface: textColor,
+        onBackground: textColor,
         onError: Colors.white,
         brightness: Brightness.light,
-      ).copyWith(background: Colors.white).copyWith(secondary: _accentColor),
+      ).copyWith(background: Colors.white).copyWith(secondary: accentColor),
       cardTheme: CardTheme(
         elevation: 4.0,
         shape: RoundedRectangleBorder(
@@ -59,36 +59,36 @@ class CustomTheme {
             width: 1.75,
           ),
         ),
-        color: _primaryColor,
+        color: primaryColor,
         shadowColor: Colors.grey.withOpacity(0.3),
       ),
       navigationRailTheme: NavigationRailThemeData(
-        backgroundColor: _primaryColor,
+        backgroundColor: primaryColor,
         selectedIconTheme: const IconThemeData(
-          color: _accentColor,
+          color: accentColor,
         ),
         selectedLabelTextStyle: const TextStyle(
-          color: _accentColor,
+          color: accentColor,
           fontWeight: FontWeight.bold,
         ),
         unselectedIconTheme: const IconThemeData(
-          color: _secondaryColor,
+          color: secondaryColor,
         ),
         unselectedLabelTextStyle: TextStyle(
-          color: _textColor.withOpacity(0.6),
+          color: textColor.withOpacity(0.6),
           fontWeight: FontWeight.normal,
         ),
       ),
       inputDecorationTheme: InputDecorationTheme(
-        fillColor: _secondaryColorLight.withOpacity(0.2),
+        fillColor: secondaryColorLight.withOpacity(0.2),
         filled: true,
         focusedBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: _secondaryColor, width: 1.4),
+          borderSide: const BorderSide(color: secondaryColor, width: 1.4),
           borderRadius: BorderRadius.circular(8.0),
         ),
         enabledBorder: OutlineInputBorder(
           borderSide:
-              BorderSide(color: _textColor.withOpacity(0.6), width: 1.0),
+              BorderSide(color: textColor.withOpacity(0.6), width: 1.0),
           borderRadius: BorderRadius.circular(8.0),
         ),
         disabledBorder: OutlineInputBorder(
@@ -97,59 +97,59 @@ class CustomTheme {
           borderRadius: BorderRadius.circular(8.0),
         ),
         hintStyle: TextStyle(
-          color: _textColor.withOpacity(0.6),
+          color: textColor.withOpacity(0.6),
         ),
       ),
     );
   }
 
   static ThemeData get themeDataOriginal {
-    const Color _primaryColor = Color.fromRGBO(161, 0, 9, 0.7); // 60% of the ui
-    const Color _backgroundColor =
+    const Color primaryColor = Color.fromRGBO(161, 0, 9, 0.7); // 60% of the ui
+    const Color backgroundColor =
         Color.fromRGBO(237, 38, 50, 1); // 60% of the ui
-    const Color _secondaryColor =
+    const Color secondaryColor =
         Color.fromRGBO(242, 137, 7, 1); // 30% of the ui
-    const Color _secondaryColorLight =
+    const Color secondaryColorLight =
         Color.fromRGBO(242, 203, 5, 1); // 30% of the ui
-    const Color _accentColor = Color.fromRGBO(242, 203, 5, 1); // 10% of the ui
+    const Color accentColor = Color.fromRGBO(242, 203, 5, 1); // 10% of the ui
 
-    const Color _textColor = Colors.black87; //Color.fromRGBO(0, 0, 0, 1);
+    const Color textColor = Colors.black87; //Color.fromRGBO(0, 0, 0, 1);
 
     return ThemeData(
-      primaryColor: _primaryColor,
-      scaffoldBackgroundColor: _backgroundColor,
+      primaryColor: primaryColor,
+      scaffoldBackgroundColor: backgroundColor,
       textTheme: const TextTheme(
-        displayLarge: TextStyle(color: _textColor),
-        displayMedium: TextStyle(color: _textColor),
-        displaySmall: TextStyle(color: _textColor),
-        headlineMedium: TextStyle(color: _textColor),
-        headlineSmall: TextStyle(color: _textColor),
-        titleLarge: TextStyle(color: _textColor),
-        titleMedium: TextStyle(color: _textColor),
-        titleSmall: TextStyle(color: _textColor),
-        bodyLarge: TextStyle(color: _textColor),
-        bodyMedium: TextStyle(color: _textColor),
-        bodySmall: TextStyle(color: _textColor),
-        labelLarge: TextStyle(color: _textColor),
+        displayLarge: TextStyle(color: textColor),
+        displayMedium: TextStyle(color: textColor),
+        displaySmall: TextStyle(color: textColor),
+        headlineMedium: TextStyle(color: textColor),
+        headlineSmall: TextStyle(color: textColor),
+        titleLarge: TextStyle(color: textColor),
+        titleMedium: TextStyle(color: textColor),
+        titleSmall: TextStyle(color: textColor),
+        bodyLarge: TextStyle(color: textColor),
+        bodyMedium: TextStyle(color: textColor),
+        bodySmall: TextStyle(color: textColor),
+        labelLarge: TextStyle(color: textColor),
       ),
-      dividerColor: _textColor.withOpacity(0.5),
+      dividerColor: textColor.withOpacity(0.5),
       buttonTheme: const ButtonThemeData(
-        buttonColor: _accentColor,
+        buttonColor: accentColor,
         textTheme: ButtonTextTheme.primary,
       ),
       colorScheme: const ColorScheme(
-        primary: _primaryColor,
-        secondary: _secondaryColor,
+        primary: primaryColor,
+        secondary: secondaryColor,
         surface: Colors.white,
         background: Colors.white,
         error: Colors.red,
         onPrimary: Colors.white,
         onSecondary: Colors.white,
-        onSurface: _textColor,
-        onBackground: _textColor,
+        onSurface: textColor,
+        onBackground: textColor,
         onError: Colors.white,
         brightness: Brightness.light,
-      ).copyWith(background: Colors.white).copyWith(secondary: _accentColor),
+      ).copyWith(background: Colors.white).copyWith(secondary: accentColor),
       cardTheme: CardTheme(
         elevation: 8.0,
         shape: RoundedRectangleBorder(
@@ -163,19 +163,19 @@ class CustomTheme {
         shadowColor: Colors.black87.withOpacity(0.8),
       ),
       navigationRailTheme: NavigationRailThemeData(
-        backgroundColor: _primaryColor,
+        backgroundColor: primaryColor,
         selectedIconTheme: const IconThemeData(
-          color: _accentColor,
+          color: accentColor,
         ),
         selectedLabelTextStyle: const TextStyle(
-          color: _accentColor,
+          color: accentColor,
           fontWeight: FontWeight.bold,
         ),
         unselectedIconTheme: const IconThemeData(
-          color: _secondaryColor,
+          color: secondaryColor,
         ),
         unselectedLabelTextStyle: TextStyle(
-          color: _textColor.withOpacity(0.6),
+          color: textColor.withOpacity(0.6),
           fontWeight: FontWeight.normal,
         ),
       ),

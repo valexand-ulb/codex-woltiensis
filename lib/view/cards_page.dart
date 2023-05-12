@@ -25,10 +25,12 @@ class CardsPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          const TextField(
-            decoration: InputDecoration(
-              prefixIcon: Icon(Icons.search),
-              labelText: '',
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: TextField(
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.search, color: Colors.grey),
+              ),
             ),
           ),
           Expanded(
