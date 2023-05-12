@@ -22,11 +22,25 @@ class LikedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GridView.count(
-        crossAxisCount: 2,
-        padding: const EdgeInsets.all(6.0),
-        childAspectRatio: 8.0 / 10.0,
-        children: _buildGridCards(ListedSong.instance.likedSongs.length),
+      body: Column(
+        children: [
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: TextField(
+              decoration: InputDecoration(
+                prefixIcon: Icon(Icons.search, color: Colors.grey),
+              ),
+            ),
+          ),
+          Expanded(
+            child: GridView.count(
+              crossAxisCount: 2,
+              padding: const EdgeInsets.all(6.0),
+              childAspectRatio: 8.0 / 10.0,
+              children: _buildGridCards(ListedSong.instance.likedSongs.length),
+            ),
+          ),
+        ],
       ),
     );
   }
