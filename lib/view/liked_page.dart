@@ -24,8 +24,8 @@ class LikedPage extends StatelessWidget {
     return Scaffold(
       body: GridView.count(
         crossAxisCount: 2,
-        padding: const EdgeInsets.all(16.0),
-        childAspectRatio: 8.0 / 9.0,
+        padding: const EdgeInsets.all(6.0),
+        childAspectRatio: 8.0 / 10.0,
         children: _buildGridCards(ListedSong.instance.likedSongs.length),
       ),
     );

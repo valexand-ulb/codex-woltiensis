@@ -44,12 +44,13 @@ class _SongCardState extends State<SongCard> {
                 child: Placeholder(), // TODO : images
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(6.0, 2.0, 16.0, 0.0),
+                padding: const EdgeInsets.fromLTRB(6.0, 2.0, 28.0, 0.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(widget.song.title),
-                    Text(widget.song.writer),
+                    Text(widget.song.title, style: Theme.of(context).textTheme.titleMedium),
+                    const SizedBox(height: 8.0),
+                    Text(widget.song.writer, style: Theme.of(context).textTheme.bodyMedium,),
                   ],
                 ),
               ),
