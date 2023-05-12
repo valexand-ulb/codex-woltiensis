@@ -15,16 +15,37 @@ class ListedSong {
     return _listedSong!;
   }
 
-  static setLists(List<Song> songs, List<Song> likedSongs){
-    _listedSong!.songs = songs;
-    _listedSong!.likedSongs = likedSongs;
+ Future<void> setLists() async{
+    CodexDatabase database = CodexDatabase.get();
+    _listedSong!.songs = await database.getAllSongs();
+
+    for (Song song in _listedSong!.songs){
+      if (song.liked){
+        _listedSong!.likedSongs.add(song);
+      }
+    }
   }
 
   static likeSong(Song song){
     _listedSong!.likedSongs.add(song);
+    _updateSongDatabase(song);
+
   }
 
   static unlikeSong(Song song){
     _listedSong!.likedSongs.remove(song);
+    _updateSongDatabase(song);
+  }
+
+  static _updateSongDatabase(Song song){
+    CodexDatabase database = CodexDatabase.get();
+    for (Song song in _listedSong!.songs){
+      print('song: ${song.id}');
+      database.updateSong(song);
+    }
+  }
+
+  static close(){
+    _listedSong = null;
   }
 }
