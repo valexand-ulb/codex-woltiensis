@@ -60,7 +60,7 @@ class _SongCardState extends State<SongCard> {
                     },
                     icon: Icon(
                       _likedIcon,
-                      color: Colors.pink,
+                      color: Theme.of(context).colorScheme.secondary,
                       size: 24.0,
                     )
                 ),
