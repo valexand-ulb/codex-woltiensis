@@ -48,9 +48,9 @@ class _SongCardState extends State<SongCard> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(widget.song.title, style: Theme.of(context).textTheme.titleMedium),
+                    Text(widget.song.title, style: Theme.of(context).textTheme.titleLarge),
                     const SizedBox(height: 8.0),
-                    Text(widget.song.writer, style: Theme.of(context).textTheme.bodyMedium,),
+                    Text(widget.song.writer, style: Theme.of(context).textTheme.titleMedium,),
                   ],
                 ),
               ),
@@ -61,7 +61,7 @@ class _SongCardState extends State<SongCard> {
                     },
                     icon: Icon(
                       _likedIcon,
-                      color: Theme.of(context).colorScheme.secondary,
+                      color: Theme.of(context).colorScheme.primary,
                       size: 24.0,
                     )
                 ),
