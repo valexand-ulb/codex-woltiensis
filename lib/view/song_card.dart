@@ -41,29 +41,38 @@ class _SongCardState extends State<SongCard> {
             children: <Widget>[
               const AspectRatio(
                 aspectRatio: 18.0 / 11.0,
-                child: Placeholder(), // TODO : images
+                child: Image(
+                    image: AssetImage("assets/images/woltje_default.png"),
+                    fit: BoxFit.fitWidth,
+                    alignment: Alignment.topCenter
+                ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(6.0, 2.0, 28.0, 0.0),
+                padding: const EdgeInsets.fromLTRB(6.0, 2.0, 28.0, 15.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(widget.song.title, style: Theme.of(context).textTheme.titleLarge),
-                    const SizedBox(height: 8.0),
-                    Text(widget.song.writer, style: Theme.of(context).textTheme.titleMedium,),
+                    Text(widget.song.title, style: Theme.of(context).textTheme.titleMedium,),
+                    const SizedBox(height: 4.0),
+                    Text(widget.song.writer, style: Theme.of(context).textTheme.bodyMedium,),
                   ],
                 ),
               ),
               Expanded(
-                child: IconButton(
-                    onPressed: () {
-                      setState(likeCard);
-                    },
-                    icon: Icon(
-                      _likedIcon,
-                      color: Theme.of(context).colorScheme.primary,
-                      size: 24.0,
-                    )
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    IconButton(
+                        onPressed: () {
+                          setState(likeCard);
+                        },
+                        icon: Icon(
+                          _likedIcon,
+                          color: Theme.of(context).colorScheme.primary,
+                          size: 24.0,
+                        )
+                    ),
+                  ],
                 ),
               ),
             ],
