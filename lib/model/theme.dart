@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:codex_woltiensis_demo/model/colors.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CustomTheme {
   static ThemeData get themeDataLight {
@@ -27,6 +28,7 @@ class CustomTheme {
       ),
 
       textTheme: TextTheme(
+
         titleLarge: TextStyle(
           color: textColor,
         ),
@@ -63,6 +65,7 @@ class CustomTheme {
       ),
       brightness: Brightness.light,
 
+      fontFamily: GoogleFonts.inter().fontFamily,
 
       // other
 
