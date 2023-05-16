@@ -98,6 +98,11 @@ class _SongCardState extends State<SongCard> {
       widget.song.liked = liked;
 
     });
-    print('${liked ? "Liked" : "Unliked"} ${widget.song.title} by ${widget.song.writer}');
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('${liked ? "Liked" : "Unliked"} ${widget.song.title} by ${widget.song.writer}'),
+        duration: const Duration(milliseconds: 1000),
+      ),
+    );
   }
 }

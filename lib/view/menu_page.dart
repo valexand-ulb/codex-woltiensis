@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:codex_woltiensis_demo/view/cards_page.dart';
 import 'package:codex_woltiensis_demo/view/liked_page.dart';
+import 'package:codex_woltiensis_demo/view/read_page.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -26,7 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
         page = const LikedPage();
         break;
       case 2:
-        page = const Placeholder();
+        page = const MarkdownViewer(filePath: 'assets/songs/song.md');
         break;
       default:
         throw UnimplementedError('no widget for $selectedIndex');
