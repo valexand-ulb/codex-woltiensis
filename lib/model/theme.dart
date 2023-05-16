@@ -4,12 +4,14 @@ import 'package:codex_woltiensis_demo/model/colors.dart';
 
 class CustomTheme {
   static ThemeData get themeDataLight {
+    Color textColor = Colors.black87;
+    Color subTextColor = Colors.black54;
     return ThemeData(
       colorScheme: ColorScheme(
         primary: redAlert.withOpacity(0.9),
         secondary: greenValid,
 
-        surface: Colors.white,
+        surface: const Color.fromRGBO(247, 247, 248, 1),
         background: blueNeutral.withOpacity(0.8),
 
         error: redAlert,
@@ -17,32 +19,48 @@ class CustomTheme {
         onPrimary: Colors.white,
         onSecondary: Colors.white,
 
-        onSurface: Colors.grey,
+        onSurface: orangeWarning,
         onBackground: Colors.black,
         onError: Colors.white,
 
         brightness: Brightness.light,
       ),
 
-      textTheme: const TextTheme(
+      textTheme: TextTheme(
         titleLarge: TextStyle(
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
-          color: Colors.blueGrey,
+          color: textColor,
         ),
         titleMedium: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-          color: Colors.black,
+          color: textColor,
         ),
         titleSmall: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
-          color: Colors.black,
+          color: textColor,
+        ),
+        bodyLarge: TextStyle(
+          color: subTextColor,
+        ),
+        bodyMedium: TextStyle(
+          color: subTextColor,
+        ),
+        bodySmall: TextStyle(
+          color: subTextColor,
         ),
       ),
 
-      scaffoldBackgroundColor: blueNeutral.shade50,
+      scaffoldBackgroundColor: Colors.white,
+
+      cardTheme: CardTheme(
+        color: orangeWarning.shade50,
+        elevation: 2.0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(15.0),
+        ),
+      ),
+
+      iconTheme: const IconThemeData(
+        color: Colors.black87,
+        fill: 0.5,
+      ),
       brightness: Brightness.light,
 
 
