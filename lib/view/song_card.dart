@@ -62,15 +62,18 @@ class _SongCardState extends State<SongCard> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    IconButton(
-                        onPressed: () {
-                          setState(likeCard);
-                        },
-                        icon: Icon(
-                          _likedIcon,
-                          color: Theme.of(context).colorScheme.primary,
-                          size: 24.0,
-                        )
+                    Padding(
+                      padding: const EdgeInsets.all(2.0),
+                      child: IconButton(
+                          onPressed: () {
+                            setState(likeCard);
+                          },
+                          icon: Icon(
+                            _likedIcon,
+                            color: Theme.of(context).colorScheme.primary,
+                            size: 24.0,
+                          )
+                      ),
                     ),
                   ],
                 ),

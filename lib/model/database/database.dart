@@ -35,14 +35,14 @@ class CodexDatabase {
   Future _createTables(Database db, int version) async {
     const String idType = 'INTEGER PRIMARY KEY AUTOINCREMENT';
     const String textType = 'TEXT NOT NULL';
-    const String Unique = 'UNIQUE';
+    const String unique = 'UNIQUE';
     const String boolType = 'BOOLEAN NOT NULL';
     await db.execute('''
     CREATE TABLE $tableSongs(
     ${SongField.id} $idType,
-    ${SongField.title} $textType $Unique,
+    ${SongField.title} $textType $unique,
     ${SongField.writer} $textType,
-    ${SongField.lyrics} $textType,
+    ${SongField.filepath} $textType,
     ${SongField.liked} $boolType
     );
     ''');

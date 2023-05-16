@@ -15,21 +15,21 @@ Future<void> main() async {
   database.insertSong(Song(
     title: 'Test1',
     writer: 'writter 1',
-    lyrics: 'Test',
+    filepath: 'Test',
     liked: false,)
   );
 
   database.insertSong(Song(
     title: 'Test2',
     writer: 'writter 2',
-    lyrics: 'Test',
+    filepath: 'Test',
     liked: false,)
   );
 
   database.insertSong(Song(
     title: 'Test3',
     writer: 'writter 3',
-    lyrics: 'Test',
+    filepath: 'Test',
     liked: false,)
   );
 

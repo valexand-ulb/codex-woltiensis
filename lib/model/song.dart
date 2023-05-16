@@ -2,28 +2,29 @@ const String tableSongs = 'songs';
 
 class SongField{
   static final List<String> values = [
-    id, title, writer, lyrics, liked
+    id, title, writer, filepath, liked
   ];
 
   static const String id = '_id';
   static const String title = 'title';
   static const String writer = 'writer';
-  static const String lyrics = 'lyrics';
+  static const String filepath = 'lyrics';
   static const String liked = 'liked';
+
 }
 
 class Song{
   final int? id;
   final String title;
   final String writer;
-  final String lyrics;
+  final String filepath;
   late bool liked;
 
   Song({
     this.id,
     required this.title,
     required this.writer,
-    required this.lyrics,
+    required this.filepath,
     required this.liked,
   });
 
@@ -32,13 +33,13 @@ class Song{
     int? id,
     String? title,
     String? writer,
-    String? lyrics,
+    String? filepath,
     bool? liked,
   }) => Song(
     id: id ?? this.id,
     title: title ?? this.title,
     writer: writer ?? this.writer,
-    lyrics: lyrics ?? this.lyrics,
+    filepath: filepath ?? this.filepath,
     liked: liked ?? this.liked,
   );
 
@@ -46,7 +47,7 @@ class Song{
     SongField.id: id,
     SongField.title: title,
     SongField.writer: writer,
-    SongField.lyrics: lyrics,
+    SongField.filepath: filepath,
     SongField.liked: liked ? 1 : 0,
   };
 
@@ -54,7 +55,7 @@ class Song{
     id: json[SongField.id] as int,
     title: json[SongField.title] as String,
     writer: json[SongField.writer] as String,
-    lyrics: json[SongField.lyrics] as String,
+    filepath: json[SongField.filepath] as String,
     liked: json[SongField.liked] == 1,
   );
 }

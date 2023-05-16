@@ -42,18 +42,19 @@ class _MyHomePageState extends State<MyHomePage> {
                 destinations: const [
                   NavigationRailDestination(
                     icon: Icon(Icons.home),
-                    label: Text('Home'),
+                    label: Text('Liedjes'),
                   ),
                   NavigationRailDestination(
                     icon: Icon(Icons.favorite),
-                    label: Text('Favorites'),
+                    label: Text('Lievelings'),
                   ),
                   NavigationRailDestination(
                     icon: Icon(Icons.book),
-                    label: Text('Read'),
+                    label: Text('Studeer'),
                   ),
                 ],
                 selectedIndex: selectedIndex,
+
                 onDestinationSelected: (value) {
                   setState(() {
                     selectedIndex = value;
@@ -63,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Expanded(
                 child: Container(
-              child: page,
+                  child: page,
             )),
           ],
         ),

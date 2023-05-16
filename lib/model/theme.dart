@@ -7,12 +7,13 @@ class CustomTheme {
   static ThemeData get themeDataLight {
     Color textColor = Colors.black87;
     Color subTextColor = Colors.black54;
+    Color surfaceColor = const Color.fromRGBO(247, 247, 248, 1);
     return ThemeData(
       colorScheme: ColorScheme(
         primary: redAlert.withOpacity(0.9),
         secondary: greenValid,
 
-        surface: const Color.fromRGBO(247, 247, 248, 1),
+        surface: surfaceColor,
         background: blueNeutral.withOpacity(0.8),
 
         error: redAlert,
@@ -59,15 +60,26 @@ class CustomTheme {
         ),
       ),
 
-      iconTheme: const IconThemeData(
-        color: Colors.black87,
-        fill: 0.5,
-      ),
       brightness: Brightness.light,
 
       fontFamily: GoogleFonts.inter().fontFamily,
 
-      // other
+      navigationRailTheme: NavigationRailThemeData(
+        backgroundColor: const Color.fromRGBO(247, 247, 248, 1),
+        selectedIconTheme: IconThemeData(
+          color: redAlert.withOpacity(0.9),
+        ),
+        unselectedIconTheme: IconThemeData(
+          color: subTextColor,
+        ),
+        selectedLabelTextStyle: TextStyle(
+          color: redAlert.withOpacity(0.9),
+        ),
+        unselectedLabelTextStyle: TextStyle(
+          color: subTextColor,
+        ),
+        labelType: NavigationRailLabelType.selected,
+      ),
 
     );
   }
