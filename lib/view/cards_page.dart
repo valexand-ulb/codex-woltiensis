@@ -29,7 +29,7 @@ class CardsPage extends StatelessWidget {
             padding: EdgeInsets.all(8.0),
             child: TextField(
               decoration: InputDecoration(
-                prefixIcon: Icon(Icons.search, color: Colors.grey),
+                prefixIcon: Icon(Icons.search),
               ),
             ),
           ),
