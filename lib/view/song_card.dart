@@ -50,7 +50,7 @@ class _SongCardState extends State<SongCard> {
               Padding(
                 padding: const EdgeInsets.all(4.0),
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(6.0, 2.0, 28.0, 15.0),
+                  padding: const EdgeInsets.fromLTRB(6.0, 2.0, 28.0, 0.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
@@ -62,20 +62,26 @@ class _SongCardState extends State<SongCard> {
                 ),
               ),
               Expanded(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    IconButton(
-                        onPressed: () {
-                          setState(likeCard);
-                        },
-                        icon: Icon(
-                          _likedIcon,
-                          color: Theme.of(context).colorScheme.primary,
-                          size: 24.0,
-                        )
-                    ),
-                  ],
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(
+                    minHeight: 24.0,
+                    maxHeight: 24.0,
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      IconButton(
+                          onPressed: () {
+                            setState(likeCard);
+                          },
+                          icon: Icon(
+                            _likedIcon,
+                            color: Theme.of(context).colorScheme.primary,
+                            size: 24.0,
+                          )
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
