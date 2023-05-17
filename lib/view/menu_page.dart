@@ -4,6 +4,8 @@ import 'package:codex_woltiensis_demo/view/cards_page.dart';
 import 'package:codex_woltiensis_demo/view/liked_page.dart';
 import 'package:codex_woltiensis_demo/view/read_page.dart';
 
+import 'package:codex_woltiensis_demo/model/listed_song.dart';
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
@@ -27,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
         page = const LikedPage();
         break;
       case 2:
-        page = const MarkdownViewer(filePath: 'assets/songs/song.md');
+        page = MarkdownViewer(song : ListedSong.instance.readSong);
         break;
       default:
         throw UnimplementedError('no widget for $selectedIndex');
@@ -43,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 destinations: const [
                   NavigationRailDestination(
                     icon: Icon(Icons.home),
-                    label: Text('Liedjes'),
+                    label: Text('Leekes'),
                   ),
                   NavigationRailDestination(
                     icon: Icon(Icons.favorite),

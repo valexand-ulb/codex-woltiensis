@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
+import 'package:codex_woltiensis_demo/model/song.dart';
+
 class MarkdownViewer extends StatefulWidget {
-  final String filePath;
-  const MarkdownViewer({super.key, required this.filePath});
+  final Song song;
+  const MarkdownViewer({super.key, required this.song});
 
   @override
   _MarkdownViewerState createState() => _MarkdownViewerState();
@@ -16,8 +18,9 @@ class _MarkdownViewerState extends State<MarkdownViewer> {
 
   @override
   void initState() {
+    print(widget.song.filepath);
     super.initState();
-    _markdownFileContent = rootBundle.loadString(widget.filePath);
+    _markdownFileContent = rootBundle.loadString('assets/songs/${widget.song.filepath}.md');
     _styleSheet = MarkdownStyleSheet(
     );
   }
@@ -25,7 +28,7 @@ class _MarkdownViewerState extends State<MarkdownViewer> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Titre")),
+      appBar: AppBar(title:Text(widget.song.title)),
       body: FutureBuilder(
         future: _markdownFileContent,
         builder: (BuildContext context, AsyncSnapshot<String> snapshot) {

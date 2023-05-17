@@ -5,6 +5,7 @@ class ListedSong {
 
   List<Song> songs = [];
   List<Song> likedSongs = [];
+  Song readSong =Song(title: '', writer: '', filepath: 'default', liked: false);
 
   static ListedSong ? _listedSong;
 
@@ -41,9 +42,12 @@ class ListedSong {
   static _updateSongDatabase(Song song){
     CodexDatabase database = CodexDatabase.get();
     for (Song song in _listedSong!.songs){
-      print('song: ${song.id}');
       database.updateSong(song);
     }
+  }
+
+  static toReadSong(Song song){
+    _listedSong!.readSong = song;
   }
 
   static close(){

@@ -8,7 +8,7 @@ class SongField{
   static const String id = '_id';
   static const String title = 'title';
   static const String writer = 'writer';
-  static const String filepath = 'lyrics';
+  static const String filepath = 'filepath';
   static const String liked = 'liked';
 
 }

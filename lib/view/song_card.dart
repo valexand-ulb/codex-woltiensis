@@ -33,7 +33,7 @@ class _SongCardState extends State<SongCard> {
           setState(likeCard);
         },
         onLongPress: () {
-          print('added to read');
+          readCard(widget.song);
         },
         child: Stack(
           children:<Widget>[Column(
@@ -107,6 +107,16 @@ class _SongCardState extends State<SongCard> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('${liked ? "Liked" : "Unliked"} ${widget.song.title} by ${widget.song.writer}'),
+        duration: const Duration(milliseconds: 1000),
+      ),
+    );
+  }
+
+  void readCard(Song song) {
+    ListedSong.toReadSong(song);
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('${widget.song.title} by ${widget.song.writer} added in lecture'),
         duration: const Duration(milliseconds: 1000),
       ),
     );
