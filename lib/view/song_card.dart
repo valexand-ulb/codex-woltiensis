@@ -48,32 +48,32 @@ class _SongCardState extends State<SongCard> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.fromLTRB(6.0, 2.0, 28.0, 15.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    Text(widget.song.title, style: Theme.of(context).textTheme.titleMedium,),
-                    const SizedBox(height: 4.0),
-                    Text(widget.song.writer, style: Theme.of(context).textTheme.bodyMedium,),
-                  ],
+                padding: const EdgeInsets.all(4.0),
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(6.0, 2.0, 28.0, 15.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(widget.song.title, style: Theme.of(context).textTheme.titleMedium,),
+                      const SizedBox(height: 4.0),
+                      Text(widget.song.writer, style: Theme.of(context).textTheme.bodyMedium,),
+                    ],
+                  ),
                 ),
               ),
               Expanded(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(2.0),
-                      child: IconButton(
-                          onPressed: () {
-                            setState(likeCard);
-                          },
-                          icon: Icon(
-                            _likedIcon,
-                            color: Theme.of(context).colorScheme.primary,
-                            size: 24.0,
-                          )
-                      ),
+                    IconButton(
+                        onPressed: () {
+                          setState(likeCard);
+                        },
+                        icon: Icon(
+                          _likedIcon,
+                          color: Theme.of(context).colorScheme.primary,
+                          size: 24.0,
+                        )
                     ),
                   ],
                 ),
