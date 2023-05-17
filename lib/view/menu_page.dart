@@ -34,11 +34,11 @@ class _MyHomePageState extends State<MyHomePage> {
     }
 
     return LayoutBuilder(builder: (context, constraints) {
-      return Scaffold(
-        body: Row(
-          children: [
-            SafeArea(
-              child: NavigationRail(
+      return SafeArea(
+        child: Scaffold(
+          body: Row(
+            children: [
+              NavigationRail(
                 extended: constraints.maxWidth >= 800,
                 destinations: const [
                   NavigationRailDestination(
@@ -62,12 +62,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   });
                 },
               ),
-            ),
-            Expanded(
-                child: Container(
-                  child: page,
-            )),
-          ],
+              Expanded(
+                  child: Container(
+                    child: page,
+              )),
+            ],
+          ),
         ),
       );
     });
