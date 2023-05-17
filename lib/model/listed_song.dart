@@ -5,7 +5,7 @@ class ListedSong {
 
   List<Song> songs = [];
   List<Song> likedSongs = [];
-  Song readSong =Song(title: '', writer: '', filepath: 'default', liked: false);
+  Song readSong =Song(title: 'Sprekt a moojertoel', writer: '', filepath: 'sprekt-a-moojertoel', liked: false);
 
   static ListedSong ? _listedSong;
 

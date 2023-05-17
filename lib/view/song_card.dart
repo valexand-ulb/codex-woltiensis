@@ -117,7 +117,8 @@ class _SongCardState extends State<SongCard> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('${widget.song.title} by ${widget.song.writer} added in lecture'),
-        duration: const Duration(milliseconds: 1000),
+        duration: const Duration(milliseconds: 800),
+        backgroundColor: Theme.of(context).colorScheme.secondary,
       ),
     );
   }

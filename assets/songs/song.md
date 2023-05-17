@@ -1,12 +1,12 @@
 # Titre a déterminer 
 
-Sur air de "Chevaliers de la table ronde".
+*Lancé par le Bruxellois le plus gradé, d'andere vallen in*
 
-...
+1, 2, 15...  
+Stosj op..., Stojs godverdomme op...  
+En de beker van achter de dui
 
-Le meyboom à Louvain la neuve, 
-Avec Un gramme 5 dans le sang. (2x)
+Dan schaut rozaainen in zen duit
 
-Un gramme 5, oui oui oui,
-Un gramme 5, non non non,
-Avec 1 gramme 5 dans le sang.(2x)
+
+
