@@ -3,6 +3,7 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 import 'package:codex_woltiensis_demo/model/song.dart';
+import 'package:codex_woltiensis_demo/model/markdown_theme.dart';
 
 class MarkdownViewer extends StatefulWidget {
   final Song song;
@@ -21,8 +22,7 @@ class _MarkdownViewerState extends State<MarkdownViewer> {
     print(widget.song.filepath);
     super.initState();
     _markdownFileContent = rootBundle.loadString('assets/songs/${widget.song.filepath}.md');
-    _styleSheet = MarkdownStyleSheet(
-    );
+    _styleSheet = CustomMarkdownViewerTheme.markdownViewerTheme;
   }
 
   @override
